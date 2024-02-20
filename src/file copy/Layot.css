@@ -1,0 +1,47 @@
+.bck{
+    background-color: rgba(0, 255, 255, 0.444);
+    color: #000;
+   
+    font-size: 30px;
+    
+    font-size: 18px;
+    height: 180px;
+}
+.bnav{
+    font-size: 18px;
+    padding: 20px;
+    font-style: oblique;
+
+}
+.lav{
+    margin-right: 800px;
+}
+.lh{
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: rgba(119, 255, 244, 0.777);
+    padding: 10px 0px;
+    height: 99.8vh;
+    position: fixed;
+    width: 210vh;
+}
+.list{
+    float: right;
+    height: 8px;
+
+}
+.ab{
+    
+    padding: 14px 16px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    margin-top: -70px;
+    font-style: oblique;
+    font:bolder;
+}
+li a:hover{
+    background-color: #66f3e9a1;
+}
