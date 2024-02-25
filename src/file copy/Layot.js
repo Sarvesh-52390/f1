@@ -6,7 +6,7 @@ const Layot = () => {
   return (
     <div className='layout'>
      
-      <img src='../Image2/Screenshot_2024-02-25_135716-removebg-preview.png' alt="gjg" width="200px" style={{borderRadius:"3vh",marginLeft:'30px',marginTop:'10px'}}/>
+      <img src='../Image2/Screenshot_2024-02-25_135716-removebg-preview.png' alt="gjg" width="130px" style={{borderRadius:"3vh",marginLeft:'30px',marginTop:'10px'}}/>
         <nav className=''>
           <div className='list'>
             <div className='ab'>
