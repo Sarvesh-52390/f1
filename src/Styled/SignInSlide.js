@@ -91,10 +91,8 @@ export default function SignInSide() {
               height:'70vh'
             }}
           >
-            <img src='./Image2\logo.jpg' alt='gd' width="100px" style={{borderRadius:'10px',marginTop:'-50px'}}/><br></br>
-           <Typography component="h1" variant="h5" sx={{fontStyle:'algerian'}}>
-              Expense Splitter
-            </Typography><br></br>
+            <img src='../Image2/Screenshot_2024-02-25_135716-removebg-preview.png' alt='gd' width="200px" style={{borderRadius:'10px',marginTop:'-50px'}}/>
+          
              <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar><br></br>
