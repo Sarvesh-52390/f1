@@ -2,12 +2,22 @@ import React from "react";
 import Layout from "../Layout/Layout";
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
-import HomeStyles from "../Home page/HomeStyles.css"
+import HomeStyles2 from "../Home page2/HomeStyles2.css"
+import { useLocation } from "react-router-dom";
 import { Avatar, Grid } from "@mui/material";
 import { Facebook, Google, Instagram, X } from "@mui/icons-material";
 
 
 const Homepg = () => {
+    const loc=useLocation();
+    const dat=loc.state;
+    const [mail,setMail]=React.useState()
+
+    React.useEffect(() => {
+        if(dat && dat.email){
+            setMail(dat.email)
+        }
+    }, [dat]);
   return (
     <Layout>
         <center>      <div className="home" >
@@ -19,7 +29,7 @@ const Homepg = () => {
           <p style={{color:"ButtonHighlight",textAlign:'left',marginTop:'-50px'}}>Replace your claculators with this...</p>
           
           <Button
-              Link href='/SignUp'
+              Link href='/Tracker'
                 type="submit"
         
                 variant="contained"
@@ -27,7 +37,7 @@ const Homepg = () => {
 
                 
               >
-                Sign Up
+                Tracker
               </Button>
           <br></br><br></br>
           

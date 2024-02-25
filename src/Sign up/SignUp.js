@@ -39,34 +39,48 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-        <div className='bimg2'>
+        <div style={{marginBottom:'0vh',height:'122.9vh',marginTop:"-180px"}} className='bimg2'>
        
       <Container component="main" maxWidth="xs" >
         <CssBaseline />
+        <Grid>
+          <img src='./Image2/logo.jpg' alt='jjf' width="350px" style={{marginTop:'350px',marginLeft:"-350px",borderRadius:'40px'}}/>
+          <h1 style={{fontSize:'60px',marginLeft:'-325px'}}>Expense Splitter</h1>
+        </Grid>
         <center>
         <Grid 
-          item sx={{backgroundImage:'url("./Image/accountant-accounting-aerial-alone.jpg")',
+          item sx={{
           }}/>
         <Box
           sx={{
-            marginTop: 9,
+          
             
-            flexDirection: 'column',
+            
             alignItems: 'center',
+            backgroundColor:' rgba(0, 0, 0, 0.471)',
+            width:'80vh',
+            marginLeft:'180px',
+            marginbottom:'40px',
+            mt:10,
+            marginTop:'-650px',
+            borderRadius:'40px',
+            
+            border:'2px solid black',
+            
            
           }}
         >
             <div className='bimg'>
              
           
-            </div><br></br>
+            <br></br>
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 8 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -77,17 +91,20 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  
                 />
               </Grid>
-              <Grid item xs={14} sm={6}>
+              <Grid item xs={14} sm={6} sx={{color:'wheat'}}>
+                <div sx={{color:'wheat'}}>
                 <TextField
+
                   required
                   fullWidth
                   id="lastName"
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
-                />
+                /></div>
               </Grid>
               <Grid item xs={12}>
                 <TextField
@@ -134,6 +151,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
           </Box>
+            </div>
         </Box>
         </center>
       </Container>

@@ -12,8 +12,13 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useNavigate } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
+import {usr,get} from 'react'
+
 import "../Styled/SignInSlide.css"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState,data,nav } from 'react';
+import {formData,setFormData} from 'react';
+
 
 function Copyright(props) {
   return (
@@ -27,6 +32,17 @@ function Copyright(props) {
     </Typography>
   );
 }
+const SignIn = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: ''
+  });
+  
+}
+const handleChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -41,10 +57,11 @@ export default function SignInSide() {
       password: data.get('password'),
     });
   };
+ 
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '90vh' }}>
+      <Grid container component="main" sx={{ height: '100vh',backgroundColor:'rgba(0, 0, 0, 0.671)',backgroundSize:'100%'}}>
         <CssBaseline />
         <Grid
           item
@@ -58,27 +75,29 @@ export default function SignInSide() {
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            marginTop:'37px',height:'91vh'
           }}
           
         />
        
-        <Grid item xs={10} sm={9} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={8} sm={9} md={5} component={Paper} elevation={6} square sx={{border:'10px',borderRadius:'50px',borderColor:'orange',marginTop:'-60px',mx:-5.5,my:4}}>
           <Box
             sx={{
-              my: 5,
-              mx: 4,
+              my: 10,
+              mx: 5,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              height:'90vh'
+              height:'70vh'
             }}
           >
-             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar><br></br>
+            <img src='./Image2\logo.jpg' alt='gd' width="100px" style={{borderRadius:'10px',marginTop:'-50px'}}/><br></br>
            <Typography component="h1" variant="h5" sx={{fontStyle:'algerian'}}>
               Expense Splitter
             </Typography><br></br>
+             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar><br></br>
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
@@ -92,6 +111,8 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                
+                
               />
               <TextField
                 margin="normal"

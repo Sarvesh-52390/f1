@@ -1,45 +1,52 @@
 .bck{
-    background-color: rgba(0, 255, 255, 0.444);
-    color: #000;
+    
    
     font-size: 30px;
     
     font-size: 18px;
-    height: 180px;
+    height: ;
 }
 .bnav{
     font-size: 18px;
     padding: 20px;
     font-style: oblique;
+    margin-left: 30px;
 
 }
 .lav{
     margin-right: 800px;
 }
-.lh{
+.layot{
     list-style-type: none;
     margin: 0;
     padding: 0px;
     overflow: hidden;
-    background-color: rgba(119, 255, 244, 0.777);
-    padding: 10px 0px;
-    height: 99.8vh;
-    position: fixed;
-    width: 210vh;
+    padding: 0px 0px;
+    height:0vh;
+    position: ;
+    width: 103.3%;
+    margin-left: -50px;
+    background-color: rgba(0, 0, 0, 0.555);
 }
 .list{
     float: right;
-    height: 8px;
+    height: 0px;
+    margin-left: 10px;
+    
 
 }
 .ab{
+    margin-left: -10px;
+    margin-top: -70px;
+}
+.ab2{
     
-    padding: 14px 16px;
+    padding: 0px 16px;
     color: rgb(0, 0, 0);
     text-align: center;
     text-decoration: none;
-    margin-top: -70px;
     font-style: oblique;
+    margin-left: 30px;
     font:bolder;
 }
 li a:hover{

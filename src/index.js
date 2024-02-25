@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import App1 from './file copy/App1';
 import Homepg from './Home page/Homepg';
+import Tracker from './components/Tracker';
 
 
 
@@ -21,7 +22,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 
-  <App1/>
+  
+<App1/>
   
 
    
