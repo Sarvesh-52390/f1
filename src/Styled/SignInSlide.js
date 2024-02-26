@@ -48,7 +48,12 @@ const handleChange = (e) => {
 
 const defaultTheme = createTheme();
 
+
 export default function SignInSide() {
+  
+  const nav=useNavigate();
+
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -56,6 +61,13 @@ export default function SignInSide() {
       email: data.get('email'),
       password: data.get('password'),
     });
+
+
+    const m=data.get('email');
+    const usr={nam:m};
+    console.log(usr.nam,"===============")
+    nav('/Home2',{state:usr})
+
   };
  
 
@@ -127,7 +139,6 @@ export default function SignInSide() {
                 label="Remember me"
               />
               <Button
-              Link href='/Home'
                 type="submit"
                 fullWidth
                 variant="contained"

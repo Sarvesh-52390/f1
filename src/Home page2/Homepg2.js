@@ -6,30 +6,34 @@ import HomeStyles2 from "../Home page2/HomeStyles2.css"
 import { useLocation } from "react-router-dom";
 import { Avatar, Grid } from "@mui/material";
 import { Facebook, Google, Instagram, X } from "@mui/icons-material";
+import { useEffect } from "react";
 
 
-const Homepg = () => {
+const Homepg2 = () => {
     const loc=useLocation();
     const dat=loc.state;
-    const [mail,setMail]=React.useState()
+    const [mail,setMail]=React.useState(" ")
 
-    React.useEffect(() => {
-        if(dat && dat.email){
-            setMail(dat.email)
-        }
+    useEffect(() => {
+      console.log("<<<<<<<<<<<<<<<<<<<first>>>>>>>>>>>>>>>>>>>",dat.nam)
+      if(dat && dat.nam){
+        setMail(dat.nam)
+        console.log(dat.nam)
+      }
     }, [dat]);
   return (
+    
     <Layout>
         <center>      <div className="home" >
         <div className="headerContainer">
             <div className="fcol">
-          <p style={{color:"rgb(248, 238, 53)",fontSize:'80px'}}>Hello,<br></br>
+          <p style={{color:"rgb(248, 238, 53)",fontSize:'80px'}}>Hello,{mail}<br></br>
           Welcome to<br></br>
            Expense Splitter</p></div>
           <p style={{color:"ButtonHighlight",textAlign:'left',marginTop:'-50px'}}>Replace your claculators with this...</p>
           
           <Button
-              Link href='/Tracker'
+              Link href='/Splitter'
                 type="submit"
         
                 variant="contained"
@@ -37,7 +41,7 @@ const Homepg = () => {
 
                 
               >
-                Tracker
+                Splitter
               </Button>
           <br></br><br></br>
           
@@ -62,4 +66,4 @@ const Homepg = () => {
   );
 };
 
-export default Homepg;
+export default Homepg2;

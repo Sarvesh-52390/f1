@@ -10,6 +10,10 @@ import Layot from './Layot'
 import Homepg from '../Home page/Homepg'
 import Homepg2 from '../Home page2/Homepg2'
 import Tracker from '../components/Tracker'
+import GetStarted from '../Get Start/GetStart'
+import BillSplitter from '../Splitter/Splitter'
+import FAQComponent from '../Blog/FAQComponenet'
+import ExpenseTracker from '../Tracker/Tracker'
 
 
 
@@ -21,19 +25,24 @@ export class App1 extends Component {
         <Routes>
               
             <Route path='/SignUp' element={<SignUp/>}/>  
+            <Route path='/' element={<GetStarted/>}/>  
                 <Route path='/SignIn' element={<SignInSide/>}/>
             <Route path='/' element={<Layot/>}>
             
-            <Route path='/Tracker' element={<Tracker/>}/>  
+            <Route path='/FAQ' element={<FAQComponent/>}/>
             
-             <Route path='/' element={<Homepg/>}/>
-             <Route path='/Home' element={<Homepg2/>}/>
+            <Route path='/Tracker' element={<ExpenseTracker/>}/>  
+            <Route path='/Splitter' element={<BillSplitter/>}/>  
+            
+             <Route path='/Home' element={<Homepg/>}/>
+             <Route path='/Home2' element={<Homepg2/>}/>
                 <Route path='/Aboutus' element={<About/>}/>
                 <Route path='/Contactus' element={<Contact/>}/>
               
 
                 
             </Route>
+            
         </Routes>
         </BrowserRouter>
       </div>

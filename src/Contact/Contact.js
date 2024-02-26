@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import MailIcon from "@mui/icons-material/Mail";
 import CallIcon from "@mui/icons-material/Call";
+import './ContactForm.css';
 import {
   Box,
   Paper,
@@ -14,14 +15,16 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
+import Footer from "../Footer/Footer";
 
 const Contact = () => {
   return (
-    <Layout >
-      <Box sx={{ my: 5, ml: 5, "& h4": { fontWeight: "bold", mb: 2 } }}>
-        
-        <Typography variant="h4">Contact Us</Typography>
-        <p>
+    <div style={{backgroundColor:' #333',height:'84vh',borderTopRightRadius:'50px',borderTopLeftRadius:'50px',border:'4px solid orange'}}>
+      
+    <Layout>
+      <Box sx={{ my: 5, ml: 10, "& h4": { fontWeight: "bold", mb: 2 } }}>
+        <Typography variant="h4" style={{color:'wheat'}}>Contact Us</Typography>
+        <p style={{color:'wheat'}}>
         We're here to assist you every step of the way! Whether you have questions, feedback, or need support, our dedicated team is ready to help. Feel free to reach out to us through any of the following channels:
         </p>
       </Box>
@@ -29,7 +32,7 @@ const Contact = () => {
         sx={{
           m: 3,
           width: "600px",
-          ml: 5,
+          ml: 10,
           "@media (max-width:600px)": {
             width: "300px",
           },
@@ -56,7 +59,8 @@ const Contact = () => {
               </TableRow>
               <TableRow>
                 <TableCell>
-                  <MailIcon sx={{ color: "skyblue", pt: 1 }} /> help@es.com
+                  <MailIcon sx={{ color: "skyblue", pt: 1 }} />
+                  <a href="mailto:727823tuec802@skct.edu.in">expensesplitter@gmail.com</a>
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -68,7 +72,9 @@ const Contact = () => {
           </Table>
         </TableContainer>
       </Box>
+    <Footer/>
     </Layout>
+    </div>
   );
 };
 

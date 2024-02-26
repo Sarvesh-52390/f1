@@ -5,11 +5,22 @@ import Button from '@mui/material/Button';
 import HomeStyles from "../Home page/HomeStyles.css"
 import { Avatar, Grid } from "@mui/material";
 import { Facebook, Google, Instagram, X } from "@mui/icons-material";
-
+import Footer from "../Footer/Footer";
+import { useLocation } from "react-router-dom";
 
 const Homepg = () => {
+  const loc=useLocation();
+  const dat=loc.state;
+  const [mail,setMail]=React.useState("a")
+
+  React.useEffect(() => {
+      if(dat){
+          setMail(dat.nam)
+          console.log(dat.nam)
+      }
+  }, [dat])
   return (
-    <Layout>
+      <Layout>
         <center>      <div className="home" >
         <div className="headerContainer">
             <div className="fcol">
@@ -45,10 +56,12 @@ const Homepg = () => {
         </div>
       </div>
       </center>
+      
           
           
 
     </Layout>
+
   );
 };
 

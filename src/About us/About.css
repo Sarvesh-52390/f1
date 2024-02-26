@@ -1,11 +1,18 @@
 .aimg{
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.523);
+    background-size: 100%;
 }
 .bdiv{
     background-color: transparent;
-    height: 594px;
+    height: 190vh;
     margin-top: -0px;
-    position: fixed;
+    background-color: rgba(0, 0, 0, 0.523);
+    color:antiquewhite;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    padding: 50px 90px;
+    border: 4px solid orange;
 }
 .ah1{
     font-size: 50px;
