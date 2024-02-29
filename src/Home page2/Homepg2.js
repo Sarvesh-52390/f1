@@ -12,7 +12,7 @@ import { useEffect } from "react";
 const Homepg2 = () => {
     const loc=useLocation();
     const dat=loc.state;
-    const [mail,setMail]=React.useState(" ")
+    const [mail,setMail]=React.useState("")
 
     useEffect(() => {
       console.log("<<<<<<<<<<<<<<<<<<<first>>>>>>>>>>>>>>>>>>>",dat.nam)

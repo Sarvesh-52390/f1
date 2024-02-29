@@ -89,7 +89,7 @@ const GetStarted = () => {
         </div>
       </div>
       <div class = "btn">
-       <Button Link href='/Home'  variant='contained' onClick={handleClick}> GetStarted</Button>
+       <Button Link href='/Signup'  variant='contained' onClick={handleClick}> GetStarted</Button>
        </div>
       <div className="page2" ref={page2Ref}>
         <div className="box">

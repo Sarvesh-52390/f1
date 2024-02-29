@@ -12,7 +12,7 @@ const Layot = () => {
             <div className='ab'>
           
           
-        <Link to="/Home2" className='ab2'>Home </Link>   
+        <Link to="/Home2" className='ab2'>Home</Link>   
         <Link to="/Tracker" className='ab2'>Tracker </Link>   
         <Link to="/Splitter" className='ab2'>Splitter </Link>   
       

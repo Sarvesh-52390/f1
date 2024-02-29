@@ -18,6 +18,9 @@ import "../Styled/SignInSlide.css"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState,data,nav } from 'react';
 import {formData,setFormData} from 'react';
+import { IconButton, InputAdornment } from '@mui/material';
+import { PaymentsSharp, Visibility, VisibilityOff } from '@mui/icons-material';
+import { FormControl,  InputLabel, OutlinedInput } from '@mui/material';
 
 
 function Copyright(props) {
@@ -25,7 +28,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Your Website.
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -52,23 +55,41 @@ const defaultTheme = createTheme();
 export default function SignInSide() {
   
   const nav=useNavigate();
-
+  const [showPassword, setShowPassword] = useState(false);
+  const [vname, setVname] = useState(false);
+  const [vpass,setVpass]=useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const [pass, setpass] = useState("")
   
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      username: data.get('username'),
+      password: pass,
     });
 
+    const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
-    const m=data.get('email');
+
+    const m=data.get('username');
+    const m1=pass;
+    setVname(usernameRegex.test(m));
+    setVpass(passwordRegex.test(m1));
+    console.log(m,">>>>>>>>>>>>>>>>>>>>>",m1)
     const usr={nam:m};
-    console.log(usr.nam,"===============")
-    nav('/Home2',{state:usr})
+    if(vname && vpass){
+      nav('/Home2',{state:usr})
+    }
+    else{
+    alert("Invalid Username or Password")
 
   };
+  }
+  const handlePass = (e) => {
+        setpass(e.target.value)
+  }
  
 
   return (
@@ -116,24 +137,40 @@ export default function SignInSide() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
+                id="username"
+                label="Username"
+                name="username"
+                autoComplete="Username"
                 autoFocus
                 
                 
               />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
+              <FormControl sx={{ m: 1, width: "63ch",marginLeft:'0px' }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <OutlinedInput
+          required
+            id="outlined-adornment-password"
+            type={showPassword ? 'text' : 'password'}
+            value={pass}
+           onChange={handlePass}
+           
+            
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl>
+              
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
