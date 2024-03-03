@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { Avatar, Grid } from "@mui/material";
 import { Facebook, Google, Instagram, X } from "@mui/icons-material";
 import { useEffect } from "react";
+import Footer from "../Footer/Footer";
 
 
 const Homepg2 = () => {
@@ -22,6 +23,7 @@ const Homepg2 = () => {
       }
     }, [dat]);
   return (
+    <div>
     
     <Layout>
         <center>      <div className="home" >
@@ -29,8 +31,8 @@ const Homepg2 = () => {
             <div className="fcol">
           <p style={{color:"rgb(248, 238, 53)",fontSize:'80px'}}>Hello,{mail}<br></br>
           Welcome to<br></br>
-           Expense Splitter</p></div>
-          <p style={{color:"ButtonHighlight",textAlign:'left',marginTop:'-50px'}}>Replace your claculators with this...</p>
+           Expense Splitter</p></div><br></br><br></br><br></br>
+          <p style={{color:"ButtonHighlight",textAlign:'left',marginTop:'-45px'}}>Replace your claculators with this...</p>
           
           <Button
               Link href='/Splitter'
@@ -58,11 +60,13 @@ const Homepg2 = () => {
   
         </div>
       </div>
+     
       </center>
           
           
 
     </Layout>
+      </div>
   );
 };
 

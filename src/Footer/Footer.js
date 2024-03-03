@@ -15,8 +15,8 @@ const Footer = () => {
     <footer id="contact" className="F-container">
       <div className="text">
         <h2>EXPENSE SPLITTER</h2>
-        <br></br><br></br>
-       <h4> <p>No more arguing, let's split today.</p></h4>
+        <br></br><br></br><br></br><br></br>
+       <h4> <p>No more arguing, let's split today.</p></h4><br></br>
         <ul className="Contact-links">
         <FaLinkedin style={{ fontSize: '24px' }}/>
         <SiGmail style={{ fontSize: '24px' }}/>

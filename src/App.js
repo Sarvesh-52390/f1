@@ -1,32 +1,32 @@
-import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+// import React from 'react'
+// import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 
 
-import SignInSide from './Styled/SignInSlide';
-import SignUp from './Sign up/SignUp';
-import About from './About us/About';
-import Contact from './Contact/Contact'
-import Layot from './file copy/Layot';
+// import SignInSide from './Styled/SignInSlide';
+// import SignUp from './Sign up/SignUp';
+// import About from './About us/About';
+// import Contact from './Contact/Contact'
+// // import Layot from './file copy/Layot';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-    <Routes>
+// const App = () => {
+//   return (
+//     <BrowserRouter>
+//     <Routes>
             
-                <Route path='/' element={<SignUp/>}/>
-                <Route path='/SignIn' element={<SignInSide/>}/>
-                <Route path='/Aboutus' element={<About/>}/>
-                <Route path='/Contactus' element={<Contact/>}/>
+//                 <Route path='/' element={<SignUp/>}/>
+//                 <Route path='/SignIn' element={<SignInSide/>}/>
+//                 <Route path='/Aboutus' element={<About/>}/>
+//                 <Route path='/Contactus' element={<Contact/>}/>
                 
               
 
                 
             
-        </Routes>
+//         </Routes>
 
-        </BrowserRouter>
-  )
-}
+//         </BrowserRouter>
+//   )
+// }
 
-export default App
+// export default App

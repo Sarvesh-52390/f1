@@ -1,5 +1,5 @@
 import { useRef, useEffect} from 'react';
-import '../Get Start/GetStarted.css';
+import '../GetStarted/GetStarted.css'
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 
@@ -7,14 +7,13 @@ const GetStarted = () => {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const page2Ref = useRef(null);
-  const navigate = useNavigate
+  const navigate = useNavigate()
 
   const handleClick = () =>
   {
-    navigate("/Home")
+    navigate("/Signup")
 
   } 
-
   useEffect(() => {
     // Function to handle scroll animation for left content
     const handleLeftScroll = () => {
@@ -25,7 +24,7 @@ const GetStarted = () => {
       }
     };
 
-    // Function to handle scroll animation for right content
+    // Function to handle scroll animat
     const handleRightScroll = () => {
       const rightElement = rightRef.current;
       if (rightElement) {
@@ -64,7 +63,6 @@ const GetStarted = () => {
         handlePage2Scroll();
       }
     };
-
     // Add event listener for scroll
     window.addEventListener('scroll', handleScroll);
 
@@ -75,44 +73,31 @@ const GetStarted = () => {
   }, []);
 
   return (
-    <div className='whole1'>    <div class = "whole">
+    <div class = "whole">
       <div className="home-container">
         <div id="left" ref={leftRef}>
-            <img src='./Image2/Screenshot_2024-02-25_135716-removebg-preview.png' alt='hfhd' width="250px" style={{
-                marginLeft:'1100px',marginTop:'200px'
-            }}/>
-         <h1 style={{marginTop:'-200px'}}>Split Your Bill, Not Your Friends</h1>
-         <p style={{fontSize:'20px',textAlign:'justify',marginLeft:'50px'}}>Bill splitting is when a group of people share the cost of something equally or based on what each person consumes
-         Add expense means putting in information about something you spent money on into an app or system that helps you keep track of your spending.
-         An expense tracker is like a digital notebook or app where you can jot down what you spend money on.
-         </p>
+         <h1>Split Your Bill, Not Your Friends</h1>
         </div>
       </div>
       <div class = "btn">
-       <Button Link href='/Signup'  variant='contained' onClick={handleClick}> GetStarted</Button>
+       <Button onClick={handleClick}>GetStarted</Button>
        </div>
       <div className="page2" ref={page2Ref}>
         <div className="box">
-       <Button Link href='/Splitter'>
           <h2>Expense Splitter</h2>
-          <p></p>
-        </Button>
+          <p>Bill splitting is when a group of people share the cost of something equally or based on what each person consumes</p>
         </div>
         <div className="box">
           <h2>Add Expense</h2>
-          <p></p>
-        </div>
+          <p>Add expense means putting in information about something you spent money on into an app or system that helps you keep track of your spending.</p>
+          </div>
         <div className="box">
-            <Button Link href='/Tracker'>
           <h2>Tracker</h2>
-          <p></p>
-          </Button>
+          <p>An expense tracker is like a digital notebook or app where you can note down what you spend money on.</p>
         </div>
       </div>
     </div>
-    </div>
-
   );
 };
 
-export default GetStarted;
+export default GetStarted;

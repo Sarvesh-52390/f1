@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import '../Splitter/BillSplitter.css';// Assuming Navbar.js is in the same directory
-
+import './BillSplitter.css'// Assuming Navbar.js is in the same directory
 import Footer from '../Footer/Footer';
+// import Navbar from '../Navbar/Navbar';
 
 const BillSplitter = () => {
     const [participants, setParticipants] = useState([{ name: '', amount: '' }]);
     const [settleTransactions, setSettleTransactions] = useState([]);
-    const [customPayee, setCustomPayee] = useState('');
+    // const [customPayee, setCustomPayee] = useState('');
 
     const addParticipant = () => {
         setParticipants([...participants, { name: '', amount: '' }]);
@@ -19,24 +19,64 @@ const BillSplitter = () => {
     };    
     
     const calculateSplit = () => {
-        const totalAmount = participants.reduce((total, participant) => total + parseFloat(participant.amount), 0);
+        const totalExpense = participants.reduce(
+            (total, participant) =>
+                total + parseFloat(participant.amount || 0),
+            0
+        );
+        const splitAmount =
+            totalExpense / participants.length;
+
+        const calculatedResults =
+            participants.map((participant) => {
+                const amount =
+                    (splitAmount - parseFloat(participant.amount)).toFixed(2);
+                return {
+                    name: participant.name,
+                    amount: parseFloat(amount),
+                };
+            });
+            const settleTransactions = [];
+            let positiveBalances =
+                calculatedResults.filter(
+                    (result) =>
+                        result.amount > 0);
+            let negativeBalances =
+                calculatedResults.filter(
+                    (result) =>
+                        result.amount < 0);
     
-        const averageAmount = totalAmount / participants.length;
+            while (positiveBalances.length > 0 &&
+                negativeBalances.length > 0) {
+                const payer = positiveBalances[0];
+                const payee = negativeBalances[0];
     
-        const settleTransactions = [];
+                const settledAmount =
+                    Math.min(
+                        Math.abs(payer.amount),
+                        Math.abs(payee.amount));
     
-        participants.forEach(participant => {
-            const amountDifference = parseFloat(participant.amount) - averageAmount;
+                settleTransactions.push({
+                    payer: payer.name,
+                    payee: payee.name,
+                    amount: settledAmount.toFixed(2),
+                });
     
-            if (amountDifference < 0) {
-                settleTransactions.push({ payer: 'You', payee: participant.name, amount: (-amountDifference).toFixed(2) });
-            } else if (amountDifference > 0) {
-                settleTransactions.push({ payer: participant.name, payee: 'You', amount: amountDifference.toFixed(2) });
+                payer.amount -= settledAmount;
+                payee.amount += settledAmount;
+    
+                if (Math.abs(payer.amount) < 0.005) {
+                    positiveBalances.shift();
+                }
+    
+                if (Math.abs(payee.amount) < 0.005) {
+                    negativeBalances.shift();
+                }
             }
-        });
     
-        setSettleTransactions(settleTransactions);
-    };
+            setSettleTransactions(settleTransactions);
+        };
+
     
     const resetApp = () => {
         setParticipants([{ name: '', amount: '' }]);
@@ -45,10 +85,10 @@ const BillSplitter = () => {
 
     return (
         <div>
-            
+  
             <div class="wrapper">
-            <div class="title">
-                <h1>Bill Splitter</h1></div>
+            <div class="title1">
+                <h1 style={{fontSize:'50px'}}>Bill Splitter</h1></div>
             <div className="container">
                 <div className="participantList">
                     {participants.map((participant, index) => (

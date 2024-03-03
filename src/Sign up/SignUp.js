@@ -133,7 +133,7 @@ export default function SignUp() {
       <Container component="main" maxWidth="xs" >
         <CssBaseline />
         <Grid>
-          <img src='../Image2/Screenshot_2024-02-25_135716-removebg-preview.png' alt='jjf' width="350px" style={{marginTop:'350px',marginLeft:"-350px",borderRadius:'40px'}}/>
+          <img src='../Image2/Screenshot_2024-02-25_135716-removebg-preview.png' alt='jjf' width="340px" style={{marginTop:'350px',marginLeft:"-350px",borderRadius:'40px'}}/>
           
         </Grid>
         <center>
@@ -148,7 +148,7 @@ export default function SignUp() {
             marginLeft:'180px',
             marginbottom:'40px',
             mt:10,
-            marginTop:'-400px',
+            marginTop:'-420px',
             borderRadius:'40px',
             
             border:'2px solid black',
