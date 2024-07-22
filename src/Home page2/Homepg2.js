@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import Layout from "../Layout/Layout";
 import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
@@ -19,6 +19,7 @@ const Homepg2 = () => {
       console.log("<<<<<<<<<<<<<<<<<<<first>>>>>>>>>>>>>>>>>>>",dat.nam)
       if(dat && dat.nam){
         setMail(dat.nam)
+        console.log(dat.nam)
         console.log(dat.nam)
       }
     }, [dat]);
